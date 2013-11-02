@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-package daicy.formula.function;
+package daicy.formula.freemarker;
 
 import daicy.formula.ActiveOperand;
 
 /**
  * This class is a function that executes within Evaluator. The function returns
- * the greater of two Integer values. See the Math.max(Integer) method in the
+ * the greater of two Integer values. See the Math.${function_name}(Integer) method in the
  * JDK for a complete description of how this function works.
  */
-public class Max implements Function {
+public class ${class_name} implements Function {
 	/**
-	 * Returns the name of the function - "max".
 	 * 
 	 * @return The name of this function class.
 	 */
 	public String getName() {
-		return "max";
+		return "${function_name}";
 	}
 
 	@Override
@@ -47,23 +46,23 @@ public class Max implements Function {
 			if ((arguments[0].getValue() instanceof Double)) {
 				Double argumentOne = ((Double) arguments[0].getValue());
 				Double argumentTwo = ((Double) arguments[1].getValue());
-				result = new Double(Math.max(argumentOne, argumentTwo));
+				result = new Double(Math.${function_name}(argumentOne, argumentTwo));
 			} else if ((arguments[0].getValue() instanceof Float)) {
 				Float argumentOne = ((Float) arguments[0].getValue());
 				Float argumentTwo = ((Float) arguments[1].getValue());
-				result = new Float(Math.max(argumentOne, argumentTwo));
+				result = new Float(Math.${function_name}(argumentOne, argumentTwo));
 			} else if ((arguments[0].getValue() instanceof Integer)) {
 				Integer argumentOne = ((Integer) arguments[0].getValue());
 				Integer argumentTwo = ((Integer) arguments[1].getValue());
-				result = new Integer(Math.max(argumentOne, argumentTwo));
+				result = new Integer(Math.${function_name}(argumentOne, argumentTwo));
 			} else if ((arguments[0].getValue() instanceof Long)) {
 				Long argumentOne = ((Long) arguments[0].getValue());
 				Long argumentTwo = ((Long) arguments[1].getValue());
-				result = new Long(Math.max(argumentOne, argumentTwo));
+				result = new Long(Math.${function_name}(argumentOne, argumentTwo));
 			} else if ((arguments[0].getValue() instanceof Short)) {
 				Short argumentOne = ((Short) arguments[0].getValue());
 				Short argumentTwo = ((Short) arguments[1].getValue());
-				result = new Integer(Math.max(argumentOne, argumentTwo));
+				result = new Integer(Math.${function_name}(argumentOne, argumentTwo));
 			}
 
 		} catch (Exception e) {
