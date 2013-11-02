@@ -18,8 +18,6 @@ package daicy.formula.function;
 
 import daicy.formula.ActiveOperand;
 
-
-
 /**
  * A function that can be specified in an expression.
  */
@@ -48,5 +46,7 @@ public interface Function {
 	 * @exception FunctionException
 	 *                Thrown if the argument(s) are not valid for this function.
 	 */
-	public ActiveOperand execute(ActiveOperand[] arguments) throws FunctionException;
+	public ActiveOperand execute(ActiveOperand[] arguments)
+			throws FunctionException;
+
 }

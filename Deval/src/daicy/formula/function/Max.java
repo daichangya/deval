@@ -18,12 +18,10 @@ package daicy.formula.function;
 
 import daicy.formula.ActiveOperand;
 
-
-
 /**
  * This class is a function that executes within Evaluator. The function returns
- * the greater of two Integer values. See the Math.max(Integer) method in the JDK
- * for a complete description of how this function works.
+ * the greater of two Integer values. See the Math.max(Integer) method in the
+ * JDK for a complete description of how this function works.
  */
 public class Max implements Function {
 	/**
@@ -35,13 +33,13 @@ public class Max implements Function {
 		return "max";
 	}
 
-
 	@Override
-	public ActiveOperand execute(ActiveOperand[] arguments) throws FunctionException {
+	public ActiveOperand execute(ActiveOperand[] arguments)
+			throws FunctionException {
 		// TODO Auto-generated method stub
-		Integer result ;
+		Integer result;
 
-		if (null==arguments || arguments.length != 2) {
+		if (null == arguments || arguments.length != 2) {
 			throw new FunctionException("Two numeric arguments are required.");
 		}
 
@@ -50,9 +48,10 @@ public class Max implements Function {
 			Integer argumentTwo = ((Integer) arguments[1].getValue());
 			result = new Integer(Math.max(argumentOne, argumentTwo));
 		} catch (Exception e) {
-			throw new FunctionException("Two numeric arguments are required.", e);
+			throw new FunctionException("Two numeric arguments are required.",
+					e);
 		}
-		
-		return new ActiveOperand(result.getClass(),result);
+
+		return new ActiveOperand(result.getClass(), result);
 	}
 }
