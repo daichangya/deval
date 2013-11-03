@@ -13,9 +13,9 @@ import daicy.formula.FormulaParser;
 import daicy.formula.function.Function;
 import daicy.formula.function.GreaterThan;
 import daicy.formula.function.IfElse;
-import daicy.formula.function.max.Add;
-import daicy.formula.function.max.Max;
-import daicy.formula.function.max.Min;
+import daicy.formula.function.math.Add;
+import daicy.formula.function.math.Max;
+import daicy.formula.function.math.Min;
 
 public class ExpressionEvaluator extends ExpressionAnalysis {
 
