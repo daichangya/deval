@@ -23,35 +23,39 @@ import daicy.formula.ActiveOperand;
  * the greater of two Integer values. See the Math.max(Integer) method in the
  * JDK for a complete description of how this function works.
  */
-public class Sub implements Function {
+public class IfElse implements Function {
 	/**
-	 * Returns the name of the function - "add".
+	 * Returns the name of the function - "ifelse".
 	 * 
 	 * @return The name of this function class.
 	 */
 	public String getName() {
-		return "sub";
+		return "ifelse";
 	}
 
 	@Override
 	public ActiveOperand execute(ActiveOperand[] arguments)
 			throws FunctionException {
 		// TODO Auto-generated method stub
-		Integer result;
+		Object result = null;
 
-		if (null == arguments || arguments.length != 2) {
-			throw new FunctionException("Two numeric arguments are required.");
+		if (null == arguments || arguments.length != 3) {
+			throw new FunctionException("Three numeric arguments are required.");
 		}
 
 		try {
-			Integer argumentOne = ((Integer) arguments[0].getValue());
-			Integer argumentTwo = ((Integer) arguments[1].getValue());
-			result = new Integer(argumentOne - argumentTwo);
+			Boolean argumentOne = ((Boolean) arguments[0].getValue());
+			if (argumentOne) {
+				result = arguments[1];
+			} else {
+				result = arguments[2];
+			}
+
 		} catch (Exception e) {
 			throw new FunctionException("Two numeric arguments are required.",
 					e);
 		}
 
-		return new ActiveOperand(result.getClass(), result);
+		return (ActiveOperand) result;
 	}
 }

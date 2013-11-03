@@ -9,7 +9,7 @@ import org.antlr.runtime.tree.BaseTree;
 import daicy.formula.ActiveOperand;
 import daicy.formula.FormulaLexer;
 
-public abstract class ExpressionAnalysis {
+public abstract class ExpressionAnalysis implements Evaluator {
 
 	// Contains all of the variables in use.
 	private Map variables = new HashMap();
@@ -30,8 +30,11 @@ public abstract class ExpressionAnalysis {
 		case FormulaLexer.CALL:
 			result = evalFunction(tree);
 			break;
-		case FormulaLexer.T__18:
+		case FormulaLexer.T__23:
 			result = addFunction(tree);
+			break;
+		case FormulaLexer.T__30:
+			result = greaterThanFunction(tree);
 			break;
 		case FormulaLexer.VAR:
 			String varName = tree.getChild(0).toStringTree();
@@ -62,6 +65,24 @@ public abstract class ExpressionAnalysis {
 	}
 
 	// call has two oprands ,e.g. call max 2
+	public ActiveOperand greaterThanFunction(BaseTree tree) throws Exception {
+		List<Object> children = tree.getChildren();
+		if (null == children || children.size() != 2) {
+			throw new Exception("Two numeric arguments are required.");
+		}
+		Integer paramNum = children.size();
+		ActiveOperand[] arguments = new ActiveOperand[paramNum];
+		for (int i = 0; i < paramNum; i++) {
+			BaseTree t = (BaseTree) children.get(i);
+			arguments[i] = eval(t);
+		}
+		return eval(">", arguments);
+
+		// stack.push(frame);
+		// asn 赋值 assign 一个操作数 栈顶元素出栈，存储于数据存储器中
+	}
+
+	// call has two oprands ,e.g. call max 2
 	private ActiveOperand evalFunction(BaseTree tree) throws Exception {
 		List<Object> children = tree.getChildren();
 		Integer paramNum = children.size() - 1;
@@ -76,9 +97,5 @@ public abstract class ExpressionAnalysis {
 		// stack.push(frame);
 		// asn 赋值 assign 一个操作数 栈顶元素出栈，存储于数据存储器中
 	}
-
-	// call has two oprands ,e.g. call max 2
-	protected abstract ActiveOperand eval(String functionName,
-			ActiveOperand[] arguments) throws Exception;
 
 }

@@ -14,58 +14,41 @@
  * limitations under the License.
  */
 
-package daicy.formula.function;
+package daicy.formula.function.max;
 
 import daicy.formula.ActiveOperand;
+import daicy.formula.function.Function;
+import daicy.formula.function.FunctionException;
 
 /**
  * This class is a function that executes within Evaluator. The function returns
  * the greater of two Integer values. See the Math.max(Integer) method in the
  * JDK for a complete description of how this function works.
  */
-public class Max implements Function {
+public class Sub implements Function {
 	/**
-	 * Returns the name of the function - "max".
+	 * Returns the name of the function - "add".
 	 * 
 	 * @return The name of this function class.
 	 */
 	public String getName() {
-		return "max";
+		return "sub";
 	}
 
 	@Override
 	public ActiveOperand execute(ActiveOperand[] arguments)
 			throws FunctionException {
 		// TODO Auto-generated method stub
-		Object result = null;
+		Integer result;
 
 		if (null == arguments || arguments.length != 2) {
 			throw new FunctionException("Two numeric arguments are required.");
 		}
 
 		try {
-			if ((arguments[0].getValue() instanceof Double)) {
-				Double argumentOne = ((Double) arguments[0].getValue());
-				Double argumentTwo = ((Double) arguments[1].getValue());
-				result = new Double(Math.max(argumentOne, argumentTwo));
-			} else if ((arguments[0].getValue() instanceof Float)) {
-				Float argumentOne = ((Float) arguments[0].getValue());
-				Float argumentTwo = ((Float) arguments[1].getValue());
-				result = new Float(Math.max(argumentOne, argumentTwo));
-			} else if ((arguments[0].getValue() instanceof Integer)) {
-				Integer argumentOne = ((Integer) arguments[0].getValue());
-				Integer argumentTwo = ((Integer) arguments[1].getValue());
-				result = new Integer(Math.max(argumentOne, argumentTwo));
-			} else if ((arguments[0].getValue() instanceof Long)) {
-				Long argumentOne = ((Long) arguments[0].getValue());
-				Long argumentTwo = ((Long) arguments[1].getValue());
-				result = new Long(Math.max(argumentOne, argumentTwo));
-			} else if ((arguments[0].getValue() instanceof Short)) {
-				Short argumentOne = ((Short) arguments[0].getValue());
-				Short argumentTwo = ((Short) arguments[1].getValue());
-				result = new Integer(Math.max(argumentOne, argumentTwo));
-			}
-
+			Integer argumentOne = ((Integer) arguments[0].getValue());
+			Integer argumentTwo = ((Integer) arguments[1].getValue());
+			result = new Integer(argumentOne - argumentTwo);
 		} catch (Exception e) {
 			throw new FunctionException("Two numeric arguments are required.",
 					e);

@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package daicy.formula.function;
+package daicy.formula.function.max;
 
 import daicy.formula.ActiveOperand;
+import daicy.formula.function.Function;
+import daicy.formula.function.FunctionException;
 
 /**
  * This class is a function that executes within Evaluator. The function returns
