@@ -15,10 +15,42 @@ tokens{
 prog: expr 
 ; 
 
-expr : multExpr (('+'|'-')^ multExpr)*
+expr : orExpr;
+
+orExpr	:	andExpr ('||'^ andExpr)*
 ;
 
-multExpr : atom (('*'|'/')^ atom)*
+andExpr	:	equalityExpr ('&&'^ equalityExpr)*
+;
+
+equalityExpr
+	:	comparisonExpr (('=='|'!=')^ comparisonExpr)*
+;
+
+comparisonExpr 
+	:	additiveExpr (('>'|'<'|'<='|'>=')^ additiveExpr)*  
+;
+
+additiveExpr 
+	:	multExpr (('+' |'-' )^ multExpr )* 
+;	
+
+multExpr 
+	:   notExpr (('*' |'/' )^ notExpr )*  
+;
+
+notExpr
+	:	(op='!')? negationExpr 	-> {$op != null}? ^(NOT negationExpr)
+						        -> negationExpr
+;
+
+negationExpr
+	:	(op='-')? primary 	-> {$op != null}? ^(NEGATE primary)
+					-> primary
+;
+primary 
+	:   atom  			
+	|  '(' expr ')' -> expr  
 ;
 
 atom 

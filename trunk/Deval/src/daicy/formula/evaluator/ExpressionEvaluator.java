@@ -10,9 +10,12 @@ import org.antlr.runtime.tree.BaseTree;
 import daicy.formula.ActiveOperand;
 import daicy.formula.FormulaLexer;
 import daicy.formula.FormulaParser;
-import daicy.formula.function.Add;
 import daicy.formula.function.Function;
-import daicy.formula.function.Max;
+import daicy.formula.function.GreaterThan;
+import daicy.formula.function.IfElse;
+import daicy.formula.function.max.Add;
+import daicy.formula.function.max.Max;
+import daicy.formula.function.max.Min;
 
 public class ExpressionEvaluator extends ExpressionAnalysis {
 
@@ -20,7 +23,10 @@ public class ExpressionEvaluator extends ExpressionAnalysis {
 
 		super(variables); // TODO Auto-generated constructor stub
 		this.putFunction(new Max());
+		this.putFunction(new Min());
 		this.putFunction(new Add());
+		this.putFunction(new IfElse());
+		this.putFunction(new GreaterThan());
 	}
 
 	// Contains all of the functions in use.
@@ -100,7 +106,7 @@ public class ExpressionEvaluator extends ExpressionAnalysis {
 	}
 
 	// call has two oprands ,e.g. call max 2
-	protected ActiveOperand eval(String functionName, ActiveOperand[] arguments)
+	public ActiveOperand eval(String functionName, ActiveOperand[] arguments)
 			throws Exception {
 
 		Function function = this.getFunction(functionName);
@@ -111,8 +117,8 @@ public class ExpressionEvaluator extends ExpressionAnalysis {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String[] testStr = { "max(3,max(1,2))", "2", "a + b + 3", "a - (b + 3)"
-		// "a + (b * 3",
+		String[] testStr = { "max(3,max(1,2))", "ifelse(a>b,2,88)",
+				"a + b + 3", "a - (b + 3)" // "a + (b * 3",
 		// "11.1+12b+a*b",
 
 		};
@@ -136,7 +142,7 @@ public class ExpressionEvaluator extends ExpressionAnalysis {
 		FormulaParser.prog_return ret = parser.prog();
 
 		Map variables = new HashMap();
-		variables.put("a", Integer.valueOf(2));
+		variables.put("a", Integer.valueOf(5));
 		variables.put("b", Integer.valueOf(3));
 
 		ExpressionEvaluator evaluator = new ExpressionEvaluator(variables);

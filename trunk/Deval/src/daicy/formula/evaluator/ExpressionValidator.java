@@ -10,11 +10,16 @@ import org.antlr.runtime.tree.BaseTree;
 import daicy.formula.ActiveOperand;
 import daicy.formula.FormulaLexer;
 import daicy.formula.FormulaParser;
-import daicy.formula.function.Add;
 import daicy.formula.function.FunctionException;
-import daicy.formula.function.Max;
+import daicy.formula.function.GreaterThan;
+import daicy.formula.function.IfElse;
+import daicy.formula.function.max.Add;
+import daicy.formula.function.max.Max;
+import daicy.formula.function.max.Min;
 import daicy.formula.validator.DataTypeProvider;
 import daicy.formula.validator.FunctionTypeValidator;
+import daicy.formula.validator.IfElseDataTypeProvider;
+import daicy.formula.validator.TowNOneBDataTypeProvider;
 import daicy.formula.validator.TowNOneNDataTypeProvider;
 import daicy.formula.validator.ValidatorException;
 
@@ -24,7 +29,11 @@ public class ExpressionValidator extends ExpressionEvaluator {
 
 		super(variables); // TODO Auto-generated constructor stub
 		validators.put(new Max().getName(), new TowNOneNDataTypeProvider());
+		validators.put(new Min().getName(), new TowNOneNDataTypeProvider());
 		validators.put(new Add().getName(), new TowNOneNDataTypeProvider());
+		validators.put(new IfElse().getName(), new IfElseDataTypeProvider());
+		validators.put(new GreaterThan().getName(),
+				new TowNOneBDataTypeProvider());
 	}
 
 	// Contains all of the validators in use.
@@ -44,7 +53,8 @@ public class ExpressionValidator extends ExpressionEvaluator {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String[] testStr = { "max(3,max(1,2))", "2", "a + b + 3", "a - (b + 3)"
+		String[] testStr = { "max(3,max(1,2))", "ifelse(a<b,2,88)",
+				"a + b + 3", "a - (b + 3)"
 		// "a + (b * 3",
 		// "11.1+12b+a*b",
 
@@ -71,6 +81,7 @@ public class ExpressionValidator extends ExpressionEvaluator {
 		Map variables = new HashMap();
 		variables.put("a", Integer.valueOf(2));
 		variables.put("b", Integer.valueOf(3));
+		variables.put("false", Boolean.FALSE);
 
 		ExpressionValidator evaluator = new ExpressionValidator(variables);
 
