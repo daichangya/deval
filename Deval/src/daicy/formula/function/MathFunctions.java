@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import daicy.formula.evaluator.ExpressionEvaluator;
-import daicy.formula.function.max.Max;
+import daicy.formula.function.math.Max;
 
 
 /**

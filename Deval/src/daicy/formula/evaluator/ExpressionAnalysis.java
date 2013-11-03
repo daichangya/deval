@@ -31,10 +31,10 @@ public abstract class ExpressionAnalysis implements Evaluator {
 			result = evalFunction(tree);
 			break;
 		case FormulaLexer.T__23:
-			result = addFunction(tree);
+			result = twoOperatorFunction("add", tree);
 			break;
 		case FormulaLexer.T__30:
-			result = greaterThanFunction(tree);
+			result = twoOperatorFunction(">", tree);
 			break;
 		case FormulaLexer.VAR:
 			String varName = tree.getChild(0).toStringTree();
@@ -47,7 +47,8 @@ public abstract class ExpressionAnalysis implements Evaluator {
 	}
 
 	// call has two oprands ,e.g. call max 2
-	private ActiveOperand addFunction(BaseTree tree) throws Exception {
+	private ActiveOperand twoOperatorFunction(String operatorName, BaseTree tree)
+			throws Exception {
 		List<Object> children = tree.getChildren();
 		if (null == children || children.size() != 2) {
 			throw new Exception("Two numeric arguments are required.");
@@ -58,25 +59,7 @@ public abstract class ExpressionAnalysis implements Evaluator {
 			BaseTree t = (BaseTree) children.get(i);
 			arguments[i] = eval(t);
 		}
-		return eval("add", arguments);
-
-		// stack.push(frame);
-		// asn 赋值 assign 一个操作数 栈顶元素出栈，存储于数据存储器中
-	}
-
-	// call has two oprands ,e.g. call max 2
-	public ActiveOperand greaterThanFunction(BaseTree tree) throws Exception {
-		List<Object> children = tree.getChildren();
-		if (null == children || children.size() != 2) {
-			throw new Exception("Two numeric arguments are required.");
-		}
-		Integer paramNum = children.size();
-		ActiveOperand[] arguments = new ActiveOperand[paramNum];
-		for (int i = 0; i < paramNum; i++) {
-			BaseTree t = (BaseTree) children.get(i);
-			arguments[i] = eval(t);
-		}
-		return eval(">", arguments);
+		return eval(operatorName, arguments);
 
 		// stack.push(frame);
 		// asn 赋值 assign 一个操作数 栈顶元素出栈，存储于数据存储器中
