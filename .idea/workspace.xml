@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a58066e1-45c4-417a-a84a-c465f253d651" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_stringtemplate_3_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_15.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/freemarker_2_3_15.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/deval.iml" afterPath="$PROJECT_DIR$/.idea/deval.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lib/antlr-3.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/lib/freemarker-2.3.15.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/AbstractMachine.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/ActiveOperand.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/Formula.g" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/Formula.tokens" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/FormulaComplier.g" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/FormulaComplier.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/FormulaComplier.tokens" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/FormulaLexer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/FormulaParser.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/Frame.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/Instruction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/Test.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/evaluator/Evaluator.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/evaluator/ExpressionAnalysis.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/evaluator/ExpressionEvaluator.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/evaluator/ExpressionFacadeProxy.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/evaluator/ExpressionValidator.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/freemarker/FreeMarkerUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/freemarker/Max.ftl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/Function.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/FunctionException.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/FunctionGroup.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/GreaterThan.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/IfElse.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/MathFunctions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/math/Add.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/math/Max.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/math/Min.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/function/math/Sub.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/util/Utils.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/validator/DataTypeProvider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/validator/FunctionTypeValidator.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/validator/IfElseDataTypeProvider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/validator/TowNOneBDataTypeProvider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/validator/TowNOneNDataTypeProvider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/daicy/formula/validator/ValidatorException.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/daicy/formula/Test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
@@ -79,6 +33,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-228">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -549,27 +513,6 @@
               <item name="deval" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="deval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deval" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deval" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deval" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formula" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -588,6 +531,9 @@
     <property name="project.structure.side.proportion" value="0.36091954" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaWork\study\deval" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ideaWork\study\deval" />
     </key>
@@ -701,12 +647,12 @@
       <option name="presentableId" value="Default" />
       <updated>1537407412955</updated>
       <workItem from="1537407414227" duration="1615000" />
-      <workItem from="1537413974682" duration="1285000" />
+      <workItem from="1537413974682" duration="1410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2900000" />
+    <option name="totallyTimeSpent" value="3025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -817,6 +763,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-228">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
